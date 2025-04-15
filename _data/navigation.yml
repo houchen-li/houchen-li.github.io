@@ -1,9 +1,31 @@
 main:
-  - title: "Posts"
+  - title: "About"
+    url: /en/about/
+  - title: "Experience"
+    url: /en/experience/
+  - title: "Education"
+    url: /en/education/
+  - title: "Projects"
+    url: /en/projects/
+  - title: "Blog"
     url: /posts/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
     url: /tags/
-  - title: "About"
-    url: /about/
+
+zh:
+  - title: "关于我"
+    url: /zh/about/
+  - title: "工作经历"
+    url: /zh/experience/
+  - title: "教育背景"
+    url: /zh/education/
+  - title: "项目"
+    url: /zh/projects/
+  - title: "博客"
+    url: /posts/
+  - title: "分类"
+    url: /categories/
+  - title: "标签"
+    url: /tags/

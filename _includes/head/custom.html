@@ -1,0 +1,60 @@
+<style>
+.lang-bar {
+  background-color: #1a1a2e;
+  border-bottom: 1px solid #2a2a4a;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 0.75em;
+  line-height: 1;
+}
+.lang-bar__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.lang-link {
+  color: #a0a0c0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.lang-link:hover {
+  color: #7db4e8;
+  text-decoration: underline;
+}
+.lang-active {
+  color: #7db4e8;
+  font-weight: bold;
+}
+.lang-sep {
+  color: #4a4a6a;
+}
+
+.greedy-nav .visible-links a.active,
+.greedy-nav .hidden-links a.active {
+  color: #fff;
+  font-size: 108%;
+}
+.greedy-nav .visible-links a.active::before {
+  width: 100%;
+}
+
+.hide-title .page__title {
+  display: none;
+}
+
+.author__bio-cols {
+  display: flex;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+.author__bio-cols span {
+  flex: 1;
+  min-width: 0;
+}
+.author__bio-cols + hr {
+  border: none;
+  border-top: 1px solid #4a4a6a;
+  margin: 0.5em 0;
+}
+</style>

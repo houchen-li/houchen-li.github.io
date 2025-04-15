@@ -1,27 +1,40 @@
-# Minimal Mistakes remote theme starter
+<h1 align="center">Houchen Li — Personal Website</h1>
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+<p align="center">
+  <img src="https://img.shields.io/badge/Jekyll-CC0000?style=flat&logo=jekyll&logoColor=white" />
+  <img src="https://img.shields.io/badge/Minimal_Mistakes-4.28.0-2E3440?style=flat" />
+  <img src="https://img.shields.io/badge/GitHub_Pages-222222?style=flat&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat" />
+</p>
 
-Contains basic configuration to get you a site with:
-
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
-
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+<p align="center">
+  Personal website of <strong>Houchen Li</strong>, built with the
+  <a href="https://github.com/mmistakes/minimal-mistakes">Minimal Mistakes</a> Jekyll theme.<br>
+  Supports Chinese/English bilingual content with a language switcher.
+</p>
 
 ---
 
-## Troubleshooting
+### Site Structure
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+| Page | EN | ZH |
+|------|----|----|
+| About | `/en/about/` | `/zh/about/` |
+| Experience | `/en/experience/` | `/zh/experience/` |
+| Education | `/en/education/` | `/zh/education/` |
+| Projects | `/en/projects/` | `/zh/projects/` |
+| Blog | `/posts/` | `/posts/` |
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+### Key Features
+
+- **Bilingual** — Language switcher bar with URL-based EN/ZH toggle
+- **Language-aware navigation** — Menu labels and links adapt to current language
+- **Dark theme** — Minimal Mistakes `dark` skin
+- **GitHub Pages** — Automatic deployment on push
+
+### Local Development
+
+```bash
+bundle install
+bundle exec jekyll serve
+```

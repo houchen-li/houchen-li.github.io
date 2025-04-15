@@ -1,0 +1,48 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign author = page.author | default: page.authors[0] | default: site.author %}
+{% assign author = site.data.authors[author] | default: author %}
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  {% if author.avatar %}
+    <div class="author__avatar">
+      <a href="{{ author.home | default: '/' | absolute_url }}">
+        <img src="{{ author.avatar | relative_url }}" alt="{{ author.name }}" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="{{ author.home | default: '/' | absolute_url }}" itemprop="url">
+        {% if page.lang == 'zh-CN' or page.lang == 'zh' %}
+          李厚辰
+        {% else %}
+          {{ author.name }}
+        {% endif %}
+      </a>
+    </h3>
+    <div class="author__bio p-note" itemprop="description">
+      {% if page.lang == 'zh-CN' or page.lang == 'zh' %}
+        <p class="author__bio-cols"><span>资深 C++ 软件工程师</span><span>高性能计算与 AI 基础架构</span></p><hr>
+      {% else %}
+        {{ author.bio | markdownify }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">{{ site.data.ui-text[locale].follow_label | remove: ":" | default: "Follow" }}</button>
+    <ul class="author__urls social-icons">
+      {% if author.links %}
+        {% for link in author.links %}
+          {% if link.label and link.url %}
+            <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer me"{% if link.url contains 'http' %} itemprop="sameAs"{% endif %}><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i><span class="label">{{ link.label }}</span></a></li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% include author-profile-custom-links.html %}
+    </ul>
+  </div>
+</div>
