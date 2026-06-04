@@ -1,8 +1,6 @@
 ---
 title: "About"
 permalink: /en/about/
-locale: "en"
-lang: en
 ---
 
 I'm **Houchen Li**, a Senior C++ Software Engineer specializing in **HPC & AI Infrastructure**. With a background in theoretical and computational physics, I bring a rigorous mathematical perspective to software engineering.

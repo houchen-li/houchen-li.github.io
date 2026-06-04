@@ -1,6 +1,6 @@
-{% assign locale = include.locale | default: site.locale %}
 {% assign author = page.author | default: page.authors[0] | default: site.author %}
 {% assign author = site.data.authors[author] | default: author %}
+{% assign current_url = page.url %}
 
 <div itemscope itemtype="https://schema.org/Person" class="h-card">
 
@@ -31,18 +31,49 @@
     </div>
   </div>
 
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">{{ site.data.ui-text[locale].follow_label | remove: ":" | default: "Follow" }}</button>
+  <div class="author__urls-wrapper author__urls-wrapper--nav">
+    <button class="btn btn--inverse author-nav-toggle">
+      {% if page.lang == 'zh-CN' or page.lang == 'zh' %}导航{% else %}Navigate{% endif %}
+    </button>
     <ul class="author__urls social-icons">
-      {% if author.links %}
-        {% for link in author.links %}
-          {% if link.label and link.url %}
-            <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer me"{% if link.url contains 'http' %} itemprop="sameAs"{% endif %}><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i><span class="label">{{ link.label }}</span></a></li>
-          {% endif %}
-        {% endfor %}
+      {% if page.lang == 'zh-CN' or page.lang == 'zh' %}
+        <li>
+          <a href="/zh/posts/"><i class="fas fa-fw fa-pen-nib" aria-hidden="true"></i><span class="label">博客</span></a>
+        </li>
+        <li>
+          <a href="/zh/categories/"><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i><span class="label">分类</span></a>
+        </li>
+        <li>
+          <a href="/zh/tags/"><i class="fas fa-fw fa-tags" aria-hidden="true"></i><span class="label">标签</span></a>
+        </li>
+      {% else %}
+        <li>
+          <a href="/en/posts/"><i class="fas fa-fw fa-pen-nib" aria-hidden="true"></i><span class="label">Blog</span></a>
+        </li>
+        <li>
+          <a href="/en/categories/"><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i><span class="label">Categories</span></a>
+        </li>
+        <li>
+          <a href="/en/tags/"><i class="fas fa-fw fa-tags" aria-hidden="true"></i><span class="label">Tags</span></a>
+        </li>
       {% endif %}
-
-      {% include author-profile-custom-links.html %}
     </ul>
   </div>
+
+  <div class="author-lang-switch">
+    {% if current_url contains '/zh/' %}
+      <a href="{{ current_url | replace: '/zh/', '/en/' }}" class="lang-switch__link">EN</a>
+      <span class="lang-switch__sep">|</span>
+      <span class="lang-switch__active">中文</span>
+    {% elsif current_url contains '/en/' %}
+      <span class="lang-switch__active">EN</span>
+      <span class="lang-switch__sep">|</span>
+      <a href="{{ current_url | replace: '/en/', '/zh/' }}" class="lang-switch__link">中文</a>
+    {% else %}
+      <a href="/en/about/" class="lang-switch__link">EN</a>
+      <span class="lang-switch__sep">|</span>
+      <a href="/zh/about/" class="lang-switch__link">中文</a>
+    {% endif %}
+  </div>
+
 </div>

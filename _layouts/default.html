@@ -33,5 +33,17 @@
     </div>
 
     {% include scripts.html locale=locale %}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var navToggle = document.querySelector('.author-nav-toggle');
+        if (navToggle) {
+          navToggle.addEventListener('click', function () {
+            var wrapper = this.closest('.author__urls-wrapper');
+            if (wrapper) wrapper.classList.toggle('is--visible');
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,16 +1,14 @@
 ---
 title: "Projects"
 permalink: /en/projects/
-locale: "en"
-lang: en
 ---
 
 ### [Boyle](https://github.com/boyle-org/boyle) — High-Performance C++ Numerical Computing Library
 
-**The Fundamental Math Basis for Autonomous Driving Vehicles and Robotics**
+**The Mathematical Foundation for Autonomous Vehicles and Robotics**
 
 - Implemented entirely in **C++23** with 20,000+ lines of code, extensively leveraging modern template metaprogramming
-- Header-mostly library with fine-grained CMake targets — link only what you need
+- Primarily header-based library with fine-grained CMake targets — link only what you need
 - **Core Modules:**
   - `boyle::math` — Dense/sparse linear algebra, piecewise curves (linear/cubic/quintic splines), FFT, Chebyshev polynomials, SIMD vectorization (AVX-512)
   - `boyle::cvxopm` — Convex optimization: QP solver (OSQP), L-BFGS, BFGS, Nelder-Mead, line search

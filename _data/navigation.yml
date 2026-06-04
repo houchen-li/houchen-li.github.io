@@ -7,12 +7,6 @@ main:
     url: /en/education/
   - title: "Projects"
     url: /en/projects/
-  - title: "Blog"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
 
 zh:
   - title: "关于我"
@@ -23,9 +17,3 @@ zh:
     url: /zh/education/
   - title: "项目"
     url: /zh/projects/
-  - title: "博客"
-    url: /posts/
-  - title: "分类"
-    url: /categories/
-  - title: "标签"
-    url: /tags/

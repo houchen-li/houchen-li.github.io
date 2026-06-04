@@ -1,26 +1,24 @@
 ---
 title: "Experience"
 permalink: /en/experience/
-locale: "en"
-lang: en
 ---
 
 ### Infrastructure Engineer
 **Beijing Tranxmart Technology Co., Ltd.** | Beijing, China | Dec. 2025 – Present
 
-- Customized Linux kernel for NVIDIA Drive Orin platform: configured kernel modules on demand (virtualization, real-time mechanisms, etc.), completed kernel compilation and system image packaging
+- Customized Linux kernel for NVIDIA Drive Orin platform: selectively configured kernel modules (virtualization, real-time mechanisms, etc.), completed kernel compilation and system image packaging
 - Designed and implemented an autonomous driving Minimum Risk Condition (MRC) system compliant with ISO 26262 functional safety standards
-- Deployed L4-level MRC on ultra-low-compute embedded chip TC397 using pure rule-based code, covering the full perception-planning-control-localization pipeline for safe pullover/emergency stop
+- Deployed L4-level MRC on ultra-low-compute embedded chip TC397 using pure rule-based code, covering the full perception-planning-control-localization pipeline for safe pull-over maneuvers and emergency braking
 
 ---
 
 ### Senior AI Infrastructure Engineer
 **Moore Threads Intelligent Technology Co., Ltd.** | Beijing, China | Apr. 2025 – Oct. 2025
 
-- Developed fused operators and distributed data sharding strategies for Alibaba's Wan2.1/Wan2.2 video generation models on Moore Threads GPUs, reducing single inference latency to 1/4 of the original
-- Adapted RoPE operator for hardware lacking native complex arithmetic support by decomposing complex rotary position encoding into equivalent floating-point operations leveraging hardware FP acceleration units
+- Developed fused operators and distributed data sharding strategies for Alibaba's Wan2.1/Wan2.2 video generation models on Moore Threads GPUs, reducing single inference latency to one-quarter of baseline
+- Adapted the RoPE operator for Moore Threads hardware, which lacks native complex arithmetic support; decomposed complex rotary position encoding into equivalent floating-point operations to leverage the hardware's FP acceleration units
 - Ported open-source inference frameworks xdit and long-context-attention to Moore Threads by replacing cuDNN SDPA with muDNN SDPA implementation
-- Conducted feasibility study on porting CUTLASS core operators by analyzing architectural differences between CUDA PTX and MUSA instruction sets
+- Conducted a feasibility study on porting CUTLASS core operators by analyzing architectural differences between CUDA PTX and MUSA instruction sets
 
 ---
 
@@ -45,5 +43,6 @@ lang: en
 ### Software Engineer
 **Beijing Qingtian Truck Technology Co., Ltd.** | Beijing, China | Jul. 2022 – Jun. 2023
 
-- Developed specialized sparse matrix solvers to improve matrix inversion efficiency; introduced higher-order boundary condition control to enhance trajectory smoothness
-- Linux-based C++ development with Bazel build system and Docker containerized deployment
+- Developed specialized sparse matrix solvers to improve matrix inversion efficiency
+- Introduced higher-order boundary condition control to enhance trajectory smoothness
+- Conducted Linux-based C++ development using the Bazel build system and Docker containerized deployment

@@ -2,24 +2,6 @@
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 {% assign current_url = page.url %}
 
-{% if current_url contains '/zh/' or current_url contains '/en/' %}
-<div class="lang-bar">
-  <div class="lang-bar__inner">
-    {% if current_url contains '/zh/' %}
-      {% assign alt_url = current_url | replace: '/zh/', '/en/' %}
-      <a href="{{ alt_url }}" class="lang-link">English</a>
-      <span class="lang-sep">|</span>
-      <span class="lang-active">中文</span>
-    {% else %}
-      {% assign alt_url = current_url | replace: '/en/', '/zh/' %}
-      <span class="lang-active">English</span>
-      <span class="lang-sep">|</span>
-      <a href="{{ alt_url }}" class="lang-link">中文</a>
-    {% endif %}
-  </div>
-</div>
-{% endif %}
-
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
@@ -57,10 +39,29 @@
           {% endif %}
         </ul>
         {% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
+        <button class="search__toggle masthead-search-btn" type="button">
+          <span class="visually-hidden">{% if page.lang == 'zh-CN' or page.lang == 'zh' %}搜索{% else %}Search{% endif %}</span>
+          <i class="fas fa-fw fa-search" aria-hidden="true"></i>
         </button>
+        {% endif %}
+        {% if current_url contains '/zh/' %}
+          <span class="lang-switch">
+            <a href="{{ current_url | replace: '/zh/', '/en/' }}" class="lang-switch__link">EN</a>
+            <span class="lang-switch__sep">|</span>
+            <span class="lang-switch__active">中文</span>
+          </span>
+        {% elsif current_url contains '/en/' %}
+          <span class="lang-switch">
+            <span class="lang-switch__active">EN</span>
+            <span class="lang-switch__sep">|</span>
+            <a href="{{ current_url | replace: '/en/', '/zh/' }}" class="lang-switch__link">中文</a>
+          </span>
+        {% else %}
+          <span class="lang-switch">
+            <a href="/en/about/" class="lang-switch__link">EN</a>
+            <span class="lang-switch__sep">|</span>
+            <a href="/zh/about/" class="lang-switch__link">中文</a>
+          </span>
         {% endif %}
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}</span>

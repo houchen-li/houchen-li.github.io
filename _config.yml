@@ -30,6 +30,8 @@ author:
   name: "Houchen Li"
   avatar: "https://avatars.githubusercontent.com/houchen-li"
   bio: "Senior C++ Software Engineer | HPC & AI Infrastructure"
+
+footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -44,17 +46,8 @@ author:
       icon: "fab fa-fw fa-x-twitter"
       url: "https://x.com/houchen_li/"
 
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/houchen-li/"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/houchen-li-b6088a138"
-    - label: "X"
-      icon: "fab fa-fw fa-x-twitter"
-      url: "https://x.com/houchen_li/"
+atom_feed:
+  hide: true
 
 defaults:
   - scope:
@@ -102,7 +95,7 @@ defaults:
 
 category_archive:
   type: liquid
-  path: /categories/
+  path: /en/categories/
 tag_archive:
   type: liquid
-  path: /tags/
+  path: /en/tags/

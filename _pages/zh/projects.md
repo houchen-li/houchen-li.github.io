@@ -1,8 +1,6 @@
 ---
 title: "项目"
 permalink: /zh/projects/
-locale: "zh-CN"
-lang: zh-CN
 ---
 
 ### [Boyle](https://github.com/boyle-org/boyle) — 高性能 C++ 数值计算库
@@ -10,7 +8,7 @@ lang: zh-CN
 **自动驾驶与机器人学的基础数学库**
 
 - 完全使用 **C++23** 标准实现，代码量超过两万行，大量运用现代模板元编程技术
-- 以头文件为主的库，提供细粒度 CMake 目标——只链接你需要的模块
+- 以头文件为主的库，提供细粒度 CMake 目标——按需链接所需模块
 - **核心模块：**
   - `boyle::math` — 稠密/稀疏线性代数、分段曲线（线性/三次/五次样条）、FFT、切比雪夫多项式、SIMD 向量化（AVX-512）
   - `boyle::cvxopm` — 凸优化：QP 求解器（OSQP）、L-BFGS、BFGS、Nelder-Mead、线搜索

@@ -1,34 +1,5 @@
 <style>
-.lang-bar {
-  background-color: #1a1a2e;
-  border-bottom: 1px solid #2a2a4a;
-  text-align: center;
-  padding: 4px 0;
-  font-size: 0.75em;
-  line-height: 1;
-}
-.lang-bar__inner {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.lang-link {
-  color: #a0a0c0;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.lang-link:hover {
-  color: #7db4e8;
-  text-decoration: underline;
-}
-.lang-active {
-  color: #7db4e8;
-  font-weight: bold;
-}
-.lang-sep {
-  color: #4a4a6a;
-}
-
+/* ── Active nav link ─────────────────────────────────────────── */
 .greedy-nav .visible-links a.active,
 .greedy-nav .hidden-links a.active {
   color: #fff;
@@ -38,10 +9,12 @@
   width: 100%;
 }
 
+/* ── Hide page title (profile pages) ────────────────────────── */
 .hide-title .page__title {
   display: none;
 }
 
+/* ── Author bio two-column layout (zh sidebar) ───────────────── */
 .author__bio-cols {
   display: flex;
   gap: 0.5em;
@@ -56,5 +29,147 @@
   border: none;
   border-top: 1px solid #4a4a6a;
   margin: 0.5em 0;
+}
+
+/* ── Nav bar: flex layout ────────────────────────────────────── */
+.greedy-nav {
+  display: flex !important;
+  align-items: center;
+}
+.greedy-nav .site-title {
+  flex-shrink: 0;
+}
+/* Desktop: centre nav links by stretching the ul */
+@media (min-width: 1024px) {
+  .greedy-nav .visible-links {
+    flex: 1;
+    display: flex !important;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/* Mobile: natural width so greedy-nav JS can collapse items */
+@media (max-width: 1023px) {
+  .greedy-nav .visible-links {
+    flex: 0 1 auto;
+    display: flex !important;
+  }
+}
+
+/* ── Language switcher: masthead ─────────────────────────────── */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  margin-right: 0.5em;
+  font-size: 0.75em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Hide masthead lang-switch on mobile — lives in author sidebar instead */
+@media (max-width: 1023px) {
+  .masthead .lang-switch {
+    display: none;
+  }
+}
+.lang-switch__active {
+  color: #eaeaea;
+  font-weight: 600;
+  cursor: default;
+}
+.lang-switch__link {
+  color: #a0a0c0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.lang-switch__link:hover {
+  color: #eaeaea;
+}
+.lang-switch__sep {
+  color: #4a4a6a;
+}
+
+/* ── Profile sidebar: nav toggle button ──────────────────────── */
+/* Hidden by default; shown on mobile */
+.author-nav-toggle {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .author-nav-toggle {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  /* Nav list hidden until toggle is activated */
+  .author__urls-wrapper--nav .author__urls {
+    display: none;
+  }
+  .author__urls-wrapper--nav.is--visible .author__urls {
+    display: block;
+  }
+}
+/* Desktop: always show nav list */
+@media (min-width: 1024px) {
+  .author__urls-wrapper--nav .author__urls {
+    display: block !important;
+  }
+}
+
+/* ── Search button in masthead ───────────────────────────────────── */
+.masthead-search-btn {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.25em;
+  color: inherit;
+  font-size: 1em;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.masthead-search-btn:hover {
+  color: #fff;
+}
+
+/* ── Language switcher: author sidebar (mobile only) ─────────── */
+.author-lang-switch {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .author-lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85em;
+    margin-top: 0.75em;
+    padding-left: 0.25em;
+  }
+}
+
+/* ── Search overlay ──────────────────────────────────────────── */
+.search-content {
+  display: none;
+}
+.search-content.is--visible {
+  display: block;
+  visibility: visible;
+  background-color: #252a34;
+  padding: 1em 2em;
+  min-height: 60vh;
+}
+/* Mobile: full-screen fixed overlay */
+@media (max-width: 1023px) {
+  .search-content.is--visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    padding: 4em 1.5em 1.5em;
+    overflow-y: auto;
+  }
 }
 </style>
